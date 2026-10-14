@@ -49,13 +49,13 @@ public class Main {
 		
 //		For petlja
 		for(int brojac = 0; brojac <= broj; brojac++) {
-			System.out.println(brojac);
+			System.out.print(brojac);
 		}
 		
 //		While petlja
 		int brojac = 0;
 		while(brojac <= broj) {
-			System.out.println(brojac);
+			System.out.print(" " + brojac);
 			brojac++;
 		}
 		
