@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Main {
 
+private static Scanner scanner;
+private static Scanner scanner2;
+
 //	Deklarisanje i inicijalizacija
 	public static void prvaVezba() {
 //		Deklarisanje
@@ -27,8 +30,7 @@ public class Main {
 	
 //	Parni i neparni brojevi - if else struktura
 	public static void drugaVezba() {
-//		Scanner sluzi za prikupljanje inputa sa konzole
-		Scanner scanner = new Scanner(System.in);
+		scanner = new Scanner(System.in);
 		System.out.println("Unesite broj");
 		int broj = scanner.nextInt();
 		
@@ -44,15 +46,14 @@ public class Main {
 	public static void trecaVezba() {
 		
 		System.out.println("Unesite broj");
-		Scanner scanner = new Scanner(System.in);
-		int broj = scanner.nextInt();
+		scanner2 = new Scanner(System.in);
+		int broj = scanner2.nextInt();
 		
 //		For petlja
 		for(int brojac = 0; brojac <= broj; brojac++) {
 			System.out.print(brojac);
 		}
 		
-//		While petlja
 		int brojac = 0;
 		while(brojac <= broj) {
 			System.out.print(" " + brojac);
