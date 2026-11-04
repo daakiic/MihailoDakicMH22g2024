@@ -6,6 +6,27 @@ public class Circle {
 	private Point center;
 	private boolean selected;
 	
+	public Circle() {
+		
+	}
+	
+	public Circle(int radius, Point center) {
+		this.radius = radius;
+		this.center = center;
+	}
+	
+	public Circle(int radius, Point center, boolean selected) {
+		this (radius, center);
+		this.selected = selected;
+	}
+	
+	@Override 
+	public String toString() {
+		return String.format("(%s, %s), radius = %s",
+				center.getX(), center.getY(), radius);
+
+	}
+	
 	public double area() {
 		return radius*radius*Math.PI;
 	}
