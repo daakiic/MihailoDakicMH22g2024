@@ -22,6 +22,14 @@ public class Rectangle {
 		this.selected = selected;
 	}	
 	
+	public int area() {
+		return height*width;
+	}
+	
+	public int circumference() {
+		return 2*height + 2*width;
+	}
+	
 	@Override 
 	public String toString() {
 		return String.format("(%s, %s), width = %s, height = %s",
@@ -29,12 +37,15 @@ public class Rectangle {
 
 	}
 	
-	public int area() {
-		return height*width;
-	}
-	
-	public int circumference() {
-		return 2*height + 2*width;
+	@Override
+	public boolean equals(Object o) {
+	    if (o instanceof Rectangle) {
+	        Rectangle temp = (Rectangle) o;
+	        if (this.width == temp.getWidth() && this.height == temp.getHeight()) {
+	            return true;
+	        }
+	    } 
+	    return false;
 	}
 	
 	public Point getUpperLeft() {
@@ -61,7 +72,5 @@ public class Rectangle {
 	public void setSelected(boolean selected) {
 		this.selected = selected;
 	}
-	
-	
-	
+		
 }

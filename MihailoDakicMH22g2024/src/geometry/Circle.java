@@ -20,6 +20,14 @@ public class Circle {
 		this.selected = selected;
 	}
 	
+	public double area() {
+		return radius*radius*Math.PI;
+	}
+	
+	public double circumference() {
+		return 2*radius*Math.PI;
+	}
+	
 	@Override 
 	public String toString() {
 		return String.format("(%s, %s), radius = %s",
@@ -27,12 +35,15 @@ public class Circle {
 
 	}
 	
-	public double area() {
-		return radius*radius*Math.PI;
-	}
-	
-	public double circumference() {
-		return 2*radius*Math.PI;
+	@Override
+	public boolean equals(Object o) {
+	    if (o instanceof Circle) {
+	        Circle temp = (Circle) o;
+	        if (this.radius == temp.getRadius()) {
+	            return true;
+	        }
+	    } 
+	    return false;
 	}
 	
 	public int getRadius() {
@@ -53,8 +64,5 @@ public class Circle {
 	public void setSelected(boolean selected) {
 		this.selected = selected;
 	}
-	
-	
-	
 	
 }

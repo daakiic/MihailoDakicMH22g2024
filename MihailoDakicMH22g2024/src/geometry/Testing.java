@@ -85,6 +85,19 @@ public class Testing {
 		System.out.println(p1.equals(r2));
 		System.out.println(p1.equals(p2));
 		System.out.println(p1.equals(ob));
+		Line l2 = new Line();
+		Point p3 = new Point(200,100);
+		l2.setStartPoint(p3);
+		l2.setEndPoint(new Point());
+		System.out.println(l1.equals(l2));
+		Circle c2 = new Circle(5, p3);
+		System.out.println(c1.equals(c2));
+		System.out.println(" ");
+		System.out.println(r1);
+		System.out.println(r2);
+//		r2.setWidth(20);
+//		r2.setHeight(10);
+		System.out.println(r1.equals(r2));
 		
 		
 	}

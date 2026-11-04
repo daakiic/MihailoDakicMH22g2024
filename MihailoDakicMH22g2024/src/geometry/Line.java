@@ -31,6 +31,20 @@ public class Line {
 
 	}
 	
+	@Override
+	public boolean equals(Object o) {
+	    if (o instanceof Line) {
+	        Line temp = (Line) o;
+	        if (this.startPoint.getX() == temp.startPoint.getX() 
+	                && this.startPoint.getY() == temp.startPoint.getY()
+	                && this.endPoint.getX() == temp.endPoint.getX() 
+	                && this.endPoint.getY() == temp.endPoint.getY()) {
+	            return true;
+	        }
+	    } 
+	    return false;
+	}
+	
 	public Point getStartPoint() {
 		return startPoint;
 	}
