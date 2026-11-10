@@ -35,10 +35,10 @@ public class Line {
 	public boolean equals(Object o) {
 	    if (o instanceof Line) {
 	        Line temp = (Line) o;
-	        if (this.startPoint.getX() == temp.startPoint.getX() 
-	                && this.startPoint.getY() == temp.startPoint.getY()
-	                && this.endPoint.getX() == temp.endPoint.getX() 
-	                && this.endPoint.getY() == temp.endPoint.getY()) {
+	        if (this.startPoint.getX() == temp.getStartPoint().getX()
+	                && this.startPoint.getY() == temp.getStartPoint().getY()
+	                && this.endPoint.getX() == temp.getEndPoint().getX() 
+	                && this.endPoint.getY() == temp.getEndPoint().getY()) {
 	            return true;
 	        }
 	    } 

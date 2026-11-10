@@ -99,6 +99,14 @@ public class Testing {
 //		r2.setHeight(10);
 		System.out.println(r1.equals(r2));
 		
+		System.out.println();
+		System.out.println("ispravak");
+		System.out.println(l1);
+		System.out.println(l2);
+		System.out.println(l1.equals(l2));
+		Line l3 = new Line(new Point (200,100), new Point (0,0));
+		System.out.println(l3);
+		System.out.println(l3.equals(l2));
 		
 	}
 	
