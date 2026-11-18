@@ -20,13 +20,13 @@ public class Line {
 		this.selected = selected;
 	}
 
-	public double lenght() {
+	public double length() {
 		return startPoint.distance(endPoint);
 	}
 
 	public boolean contains(int x, int y) {
 		Point click = new Point(x, y);
-		return (lenght() - (startPoint.distance(click) + endPoint.distance(click))) <= 2;
+		return ((startPoint.distance(click) + endPoint.distance(click)) - length()) <= 2;
 	}
 
 	@Override
