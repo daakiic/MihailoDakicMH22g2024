@@ -1,10 +1,9 @@
 package geometry;
 
-public class Line {
+public class Line extends Shape {
 
 	private Point startPoint;
 	private Point endPoint;
-	private boolean selected;
 
 	public Line() {
 
@@ -24,9 +23,21 @@ public class Line {
 		return startPoint.distance(endPoint);
 	}
 
+	@Override
+	public void moveTo(int x, int y) {
+//		ostavljamo prazno
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		startPoint.moveBy(byX, byY);
+		endPoint.moveBy(byX, byY);
+	}
+
+	@Override
 	public boolean contains(int x, int y) {
 		Point click = new Point(x, y);
-		return ((startPoint.distance(click) + endPoint.distance(click)) - length()) <= 2;
+		return ((startPoint.distance(click) + endPoint.distance(click) - length())) <= 2;
 	}
 
 	@Override
@@ -34,6 +45,15 @@ public class Line {
 		return String.format("(%s, %s) --> (%s, %s)", startPoint.getX(), startPoint.getY(), endPoint.getX(),
 				endPoint.getY());
 
+	}
+
+	@Override
+	public int compareTo(Shape o) {
+		if (o instanceof Line) {
+			Line temp = (Line) o;
+			return (int) (length() - temp.length());
+		}
+		return 0;
 	}
 
 	@Override
@@ -58,20 +78,12 @@ public class Line {
 		return endPoint;
 	}
 
-	public boolean isSelected() {
-		return selected;
-	}
-
 	public void setStartPoint(Point startPoint) {
 		this.startPoint = startPoint;
 	}
 
 	public void setEndPoint(Point endPoint) {
 		this.endPoint = endPoint;
-	}
-
-	public void setSelected(boolean selected) {
-		this.selected = selected;
 	}
 
 }

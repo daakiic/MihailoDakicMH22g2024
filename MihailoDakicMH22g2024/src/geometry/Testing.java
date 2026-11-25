@@ -1,5 +1,8 @@
 package geometry;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Testing {
 
 	public static void main(String[] args) {
@@ -59,6 +62,35 @@ public class Testing {
 //		referenca omogucava pristup metodama
 //		onaj ko izvrsava metodu je zapravo objekat
 
+		System.out.println("test");
+		System.out.println(p1);
+		p2.setX(100);
+		p2.setY(30);
+		System.out.println(p2);
+		System.out.println(p1.compareTo(p2));
+
+		ArrayList<Point> points = new ArrayList<Point>();
+		points.add(p1);
+		points.add(p2);
+		Point p4 = new Point(300, 300);
+		Point p5 = new Point(50, 1000);
+		points.add(p4);
+		points.add(p5);
+		
+		System.out.println("Nesortirana lista tacaka: ");
+		for(Point p: points) {
+			System.out.println(p);
+		}
+		
+		Collections.sort(points);
+		System.out.println("Sortirana lista tacaka: ");
+		for(Point p: points) {
+			System.out.println(p);
+		}
+	
+		System.out.println(l1);
+		System.out.println(l1.contains(600,600));
+		
 	}
 
 }

@@ -1,11 +1,10 @@
 package geometry;
 
-public class Rectangle {
+public class Rectangle extends Shape {
 
 	private Point upperLeft;
 	private int width;
 	private int height;
-	private boolean selected;
 
 	public Rectangle() {
 
@@ -30,6 +29,17 @@ public class Rectangle {
 		return 2 * height + 2 * width;
 	}
 
+	@Override
+	public void moveTo(int x, int y) {
+		upperLeft.moveTo(x, y);
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		upperLeft.moveBy(byX, byY);
+	}
+
+	@Override
 	public boolean contains(int x, int y) {
 		return (x >= upperLeft.getX() && x <= upperLeft.getX() + width)
 				&& (x >= upperLeft.getY() && x <= upperLeft.getY() + width);
@@ -44,6 +54,15 @@ public class Rectangle {
 	public String toString() {
 		return String.format("(%s, %s), width = %s, height = %s", upperLeft.getX(), upperLeft.getY(), width, height);
 
+	}
+	
+	@Override
+	public int compareTo(Shape o) {
+		if (o instanceof Rectangle) {
+			Rectangle temp = (Rectangle) o;
+			return (int) (area() - temp.area());
+		}
+		return 0;
 	}
 
 	@Override
@@ -69,10 +88,6 @@ public class Rectangle {
 		return height;
 	}
 
-	public boolean isSelected() {
-		return selected;
-	}
-
 	public void setUpperLeft(Point upperLeft) {
 		this.upperLeft = upperLeft;
 	}
@@ -83,10 +98,6 @@ public class Rectangle {
 
 	public void setHeight(int height) {
 		this.height = height;
-	}
-
-	public void setSelected(boolean selected) {
-		this.selected = selected;
 	}
 
 }

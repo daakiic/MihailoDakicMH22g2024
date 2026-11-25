@@ -1,6 +1,7 @@
 package geometry;
 
-public abstract class Shape {
+// interfejs Comparable<tip> se koristi za sortiranje (sort) i dosutpna je (ne treba je praviti)
+public abstract class Shape implements Moveable, Comparable<Shape>{
 
 	protected boolean selected;
 
@@ -12,6 +13,8 @@ public abstract class Shape {
 		this.selected = selected;
 	}
 
+	public abstract boolean contains(int x, int y);
+	
 	public boolean isSelected() {
 		return selected;
 	}
